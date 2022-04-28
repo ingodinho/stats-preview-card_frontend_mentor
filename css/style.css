@@ -15,73 +15,96 @@ html{
 
 body {
   background: hsl(233, 47%, 7%);
+  color: hsl(0, 0%, 100%);
 }
 
 .container {
-  width: 80%;
+  width: 70%;
+  display: grid;
+  grid-template: 1fr / 1fr 1fr;
   margin: 20vh auto auto auto;
-  display: flex;
   justify-content: space-between;
   background: hsl(244, 38%, 16%);
   border-radius: 10px;
-}
-
-.img {
-  background: url('../images/image-header-desktop.jpg') hsl(277, 64%, 61%) center / cover no-repeat;
-  background-blend-mode: multiply;
-  padding: 10vh 10%;
-  width: 0;
-  flex: 1 1 0;
-  border: none;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
+  overflow: hidden;
 }
 
 .container section {
-  width: 0;
-  flex: 1 1 0;
-  padding: 10vh 10%;
+  padding: 7vh 20% 7vh 10%
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  background:hsla(277, 64%, 61%, 0.9) url('../images/image-header-desktop.jpg') center / cover no-repeat;
+  background-blend-mode:multiply;
+}
+
+.background {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(hsl(277, 64%, 61%))
 }
 
 .container section h1 {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
-  font-size: 1.9em;
-  margin-bottom: 1.5em;
-  line-height: 1.5em;
-  color: hsl(0, 0%, 100%);
-}
-
-.container section > p {
-  margin-bottom: 5em;
-  color: hsla(0, 0%, 100%, 0.75);
-  line-height: 1.5em;
-  font-family: 'Inter', sans-serif;
+  font-size: 32px;
+  margin-bottom: 30px;
 }
 
 .container section h1 span {
   color: hsl(277, 64%, 61%);
 }
 
+.container section > p {
+  color: hsla(0, 0%, 100%, 0.75);
+  line-height: 1.5;
+  font-family: 'Inter', sans-serif;
+}
+
 .flex-2 {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
+  font-family: 'Lexend Deca', sans-serif;
+  margin-top: 60px;
 }
 
-.flex-2 div h2 {
-  color: hsl(0, 0%, 100%);
-  margin-bottom: 0.5em;
+.flex-2 h2 {
   font-family: 'Inter', sans-serif;
+  margin-bottom: 10px;
 }
 
-.flex-2 div p {
+.flex-2 p {
+  font-family: 'Lexend Deca', sans-serif;
   color: hsla(0, 0%, 100%, 0.6);
   text-transform: uppercase;
-  font-family: 'Inter', sans-serif;
+  letter-spacing: 1px;
 }
 
-.attribution {
-  margin-top: 5vh;
-  color: hsl(0, 0%, 100%);
+@media only screen and (max-width: 375px) {
+
+  .container {
+    grid-template: 0.5fr 1fr / 1fr;
+    width: 90%;
+  }
+
+  .container section {
+    padding: 5vh 20px;
+    text-align: center;
+  }
+
+  .img {
+    order: -1;
+  }
+
+  .flex-2 {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .flex-2 div {
+    margin-bottom: 30px;
+  }
 }
